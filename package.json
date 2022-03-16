@@ -1,0 +1,42 @@
+{
+  "name": "react18crud",
+  "version": "1.0.0",
+  "description": "Initial setup of the Project.  Created with React 18, Webpack, Babel, useContext and useReducer.",
+  "main": "index.jsx",
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "pro": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indigomx9/react18crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indigomx9/react18crud/issues"
+  },
+  "homepage": "https://github.com/indigomx9/react18crud#readme",
+  "dependencies": {
+    "react": "^18.0.0-rc.2",
+    "react-dom": "^18.0.0-rc.2",
+    "react-hot-loader": "^4.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
+
+
