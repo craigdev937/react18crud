@@ -22,7 +22,7 @@ const initialState = {
 
 export const GlobalContext = React.createContext(initialState);
 
-export const GlocalProvider = ({children}) => {
+export const GlobalProvider = ({children}) => {
     const [state, dispatch] = 
     React.useReducer(Reducer, initialState);
 

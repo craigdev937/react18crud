@@ -1,10 +1,77 @@
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { GlobalContext } from "../global/GState";
+
+const initialState = {
+    id: "",
+    title: "",
+    description: ""
+};
 
 export const TaskForm = () => {
+    const params = useParams();
+    const navigate = useNavigate();
+    const [task, setTask] = React.useState(initialState);
+    const { tasks, createTask, updateTask } = 
+    React.useContext(GlobalContext);
+
+    const handleChange = (event) => {
+        setTask({...task, 
+            [event.target.name]: event.target.value});
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!task.id) {
+            createTask(task);
+        } else {
+            updateTask(task);
+        };
+        navigate("/");
+    };
+
+    React.useEffect(() => {
+        const taskFound = tasks.find(
+            (task) => task.id === params.id);
+        if (taskFound) {
+            setTask({
+                id: taskFound.id,
+                title: taskFound.title,
+                description:taskFound.description,
+            });
+        }
+    }, [params.id, tasks]);
+
     return (
         <React.Fragment>
-            <h1>TaskForm</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, perspiciatis. Ipsum esse inventore necessitatibus harum voluptatem, quae ducimus delectus veritatis commodi vel aspernatur, debitis modi. Pariatur amet illo ex? Consequuntur.</p>
+            <form onSubmit={handleSubmit}>
+                <h2>
+                    {task.id ? "update " : "Create "}
+                    A Task
+                </h2>
+                <section>
+                    <input 
+                        autoFocus
+                        type="text"
+                        name="title"
+                        placeholder="Write a title"
+                        value={task.title}
+                        onChange={handleChange}
+                    />
+                </section>
+                <section>
+                    <textarea 
+                        rows="2"
+                        name="description" 
+                        placeholder="Write a description"
+                        value={task.description}
+                        onChange={handleChange}
+                    />
+                </section>
+                <button>
+                    {task.id ? "Update Task" : "Create Task"}
+                </button>
+            </form>
         </React.Fragment>
     );
 };

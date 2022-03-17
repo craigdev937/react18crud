@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
 import { Main } from "../routes/Main";
-import { GlocalProvider } from "../global/GState";
+import { GlobalProvider } from "../global/GState";
 
 export const App = () => {
     return (
         <React.Fragment>
-            <GlocalProvider>
+            <GlobalProvider>
                 <Main />
-            </GlocalProvider>
+            </GlobalProvider>
         </React.Fragment>
     );
 };
