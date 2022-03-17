@@ -22,7 +22,8 @@
     "react": "^18.0.0-rc.2",
     "react-dom": "^18.0.0-rc.2",
     "react-hot-loader": "^4.13.0",
-    "react-router-dom": "^6.2.2"
+    "react-router-dom": "^6.2.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.7",
@@ -39,6 +40,3 @@
     "webpack-dev-server": "^4.7.4"
   }
 }
-
-
-
